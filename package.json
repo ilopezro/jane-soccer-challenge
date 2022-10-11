@@ -1,0 +1,10 @@
+{
+  "name": "jane-soccer-challenge",
+  "version": "1.0.0",
+  "description": "Program that parses soccer scores & outputs matchday information",
+  "main": "index.ts",
+  "repository": "https://github.com/ilopezro/jane-soccer-challenge.git",
+  "author": "Isai Lopez <ilopezro@ucsc.edu>",
+  "license": "MIT",
+  "devDependencies": {}
+}
