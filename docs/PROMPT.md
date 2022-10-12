@@ -1,10 +1,10 @@
-## The Problem
+# The Problem
 
 We want you to create a script that reads a listing of game
 results for a soccer league and prints the top teams at
 the end of each matchday.
 
-### Input/output
+## Input/output
 
 The input and output will be text. A static file will be
 used to represent the game results.
@@ -27,7 +27,7 @@ the solution should output the top three teams, ordered from most to least
 points. If the matchday hasn't ended, the solution should move on to
 the next game result. See the expected format specified in expected-output.txt.
 
-### The rules
+## The rules
 
 In this league, a draw (tie) is worth 1 point and a win is worth 3 points. A
 loss is worth 0 points. If two or more teams among the top three teams have
@@ -35,7 +35,7 @@ the same number of points, they should have the same rank and be printed in
 alphabetical order. That said, at most three teams should be listed in the
 output per matchday.
 
-### Guidelines
+## Guidelines
 
 This should be implemented in a language with which you are familiar. We would
 prefer that you use ruby, javascript, typescript, or go, if you are
@@ -58,7 +58,7 @@ decide.
 
 Read this document carefully, you will be graded on how well you follow it.
 
-### Platform support
+## Platform support
 
 This will be run in a unix or OS X environment. If you choose to use a
 compiled language, please keep this in mind. Please use platform-agnostic constructs where
