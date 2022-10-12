@@ -10,7 +10,9 @@
   "scripts": {
     "start": "nodemon index.ts",
     "start:once": "ts-node index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "lint:ts": "eslint src",
+    "lint:md": "eslint docs README.md"
   },
   "devDependencies": {
     "@types/node": "^18.8.4",
