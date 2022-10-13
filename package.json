@@ -8,9 +8,9 @@
   "author": "Isai Lopez <ilopezro@ucsc.edu>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.ts",
+    "start": "nodemon index.ts fixtures/formatted-input.txt",
     "start:once": "ts-node index.ts",
-    "build": "tsc",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "lint:ts": "eslint src",
     "lint:md": "eslint docs README.md",
     "test": "jest --coverage src",
