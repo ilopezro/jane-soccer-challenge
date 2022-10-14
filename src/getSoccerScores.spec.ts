@@ -7,17 +7,17 @@ import {
 } from "./specHelpers";
 
 describe("getSoccerScores", () => {
-  const foo = jest.fn<typeof console.log, unknown[]>();
-  global.console = { ...global.console, log: foo };
-  afterEach(() => foo.mockReset());
+  const mockConsoleLog = jest.fn<typeof console.log, unknown[]>();
+  global.console = { ...global.console, log: mockConsoleLog };
+  afterEach(() => mockConsoleLog.mockReset());
   describe("with formatted input", () => {
     it("outputs correct matchday information", () => {
       getSoccerScores({ input: "inputs/formatted.txt" });
       formattedExpectedOutput.forEach((output, idx) => {
         if (output === null) {
-          expect(foo).toHaveBeenCalled();
+          expect(mockConsoleLog).toHaveBeenCalled();
         } else {
-          expect(foo).toHaveBeenNthCalledWith(idx + 1, output);
+          expect(mockConsoleLog).toHaveBeenNthCalledWith(idx + 1, output);
         }
       });
     });
@@ -28,9 +28,9 @@ describe("getSoccerScores", () => {
       getSoccerScores({ input: "inputs/small-league.txt" });
       smallLeagueExpectedOutput.forEach((output, idx) => {
         if (output === null) {
-          expect(foo).toHaveBeenCalled();
+          expect(mockConsoleLog).toHaveBeenCalled();
         } else {
-          expect(foo).toHaveBeenNthCalledWith(idx + 1, output);
+          expect(mockConsoleLog).toHaveBeenNthCalledWith(idx + 1, output);
         }
       });
     });
@@ -39,8 +39,8 @@ describe("getSoccerScores", () => {
   describe("with empty league", () => {
     it("does not print or return anything", () => {
       getSoccerScores({ input: "inputs/empty.txt" });
-      expect(foo.mock.calls).toHaveLength(0);
-      expect(foo).not.toHaveBeenCalled();
+      expect(mockConsoleLog.mock.calls).toHaveLength(0);
+      expect(mockConsoleLog).not.toHaveBeenCalled();
     });
   });
 
@@ -49,9 +49,9 @@ describe("getSoccerScores", () => {
       getSoccerScores({ input: "inputs/unformatted.txt" });
       unformattedExpectedOutput.forEach((output, idx) => {
         if (output === null) {
-          expect(foo).toHaveBeenCalled();
+          expect(mockConsoleLog).toHaveBeenCalled();
         } else {
-          expect(foo).toHaveBeenNthCalledWith(idx + 1, output);
+          expect(mockConsoleLog).toHaveBeenNthCalledWith(idx + 1, output);
         }
       });
     });
