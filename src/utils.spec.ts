@@ -1,6 +1,37 @@
-import { fetchTeamInfo, fetchTeamsInfo, fetchTopTeams } from "./utils";
+import {
+  fetchTeamInfo,
+  fetchTeamsInfo,
+  fetchTopTeams,
+  lineFileRegex,
+} from "./utils";
 
 describe("Utils", () => {
+  describe("lineFileRegex", () => {
+    describe("when line is formatted properly", () => {
+      it("accepts the line", () => {
+        const lineToTest = "Real Madrid 3, Barcelona 2";
+        expect(lineFileRegex.test(lineToTest)).toBeTruthy();
+      });
+    });
+    describe("when whitepsace is added to beginning and end of string", () => {
+      it("accepts line", () => {
+        const lineToTest =
+          "       Capitola Seahorses 1,Aptos FC                                                       0";
+        expect(lineFileRegex.test(lineToTest)).toBeTruthy();
+      });
+    });
+    describe("when line contains three teams", () => {
+      it("does not accept the line", () => {
+        const lineToTest = "Real Madrid 3, Barcelona 2, Atletico 1";
+        expect(lineFileRegex.test(lineToTest)).toBeFalsy();
+      });
+    });
+    describe("when line is empty", () => {
+      it("does not accept the line", () => {
+        expect(lineFileRegex.test("")).toBeFalsy();
+      });
+    });
+  });
   describe("fetchTeamInfo", () => {
     describe("given a formatted input", () => {
       it("returns correct values", () => {
