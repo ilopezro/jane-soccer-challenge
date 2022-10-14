@@ -7,10 +7,16 @@
   "repository": "https://github.com/ilopezro/jane-soccer-challenge.git",
   "author": "Isai Lopez <ilopezro@ucsc.edu>",
   "license": "MIT",
+  "bin": {
+    "getSoccerResults": "./bin/getSoccerResults"
+  },
   "scripts": {
-    "start": "nodemon index.ts",
-    "start:once": "ts-node index.ts",
-    "build": "tsc",
+    "start": "nodemon index.ts inputs/formatted.txt",
+    "start:formatted": "ts-node index.ts inputs/formatted.txt",
+    "start:empty": "ts-node index.ts inputs/empty.txt",
+    "start:smallLeague": "ts-node index.ts inputs/small-league.txt",
+    "start:unformatted": "ts-node index.ts inputs/unformatted.txt",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "lint:ts": "eslint src",
     "lint:md": "eslint docs README.md",
     "test": "jest --coverage src",

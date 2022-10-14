@@ -1,6 +1,6 @@
-// import { getSoccerScores } from "./getSoccerScores";
+import { getSoccerScores } from "./getSoccerScores";
 
-function run(): void {
+export function run() {
   if (process.argv.length !== 3) {
     console.log(
       "   Incorrect Number of Params Entered\n\n",
@@ -8,7 +8,7 @@ function run(): void {
     );
     return;
   }
-  console.log("did it reach this?");
-}
 
-run();
+  const fileName = process.argv[2];
+  getSoccerScores({ input: fileName });
+}

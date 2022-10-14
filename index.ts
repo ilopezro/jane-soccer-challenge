@@ -1,1 +1,3 @@
-console.log("how about now");
+import { run } from "./src";
+
+run();

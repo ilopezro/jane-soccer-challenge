@@ -8,5 +8,5 @@
     "rootDir": "./",
     "strict": true,
     "esModuleInterop": true
-  }
+  },
 }
