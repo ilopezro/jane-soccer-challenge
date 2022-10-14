@@ -1,7 +1,7 @@
 import { LeagueTracker } from "./getSoccerScores";
 
 export const lineFileRegex =
-  /(\s*[A-Za-z0-9]+( \s*[A-Za-z0-9]+)+\s*), (\s*[A-Za-z0-9]+(\s* [A-Za-z0-9]+)+\s*)/i;
+  /(\s*[A-Za-z0-9]+( \s*[A-Za-z0-9]+)+\s*),(\s*[A-Za-z0-9]+(\s* [A-Za-z0-9]+)+\s*)/i;
 
 interface TeamInfo {
   name: string;

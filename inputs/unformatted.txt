@@ -1,5 +1,5 @@
 San Jose Earthquakes                                                            3, Santa Cruz Slugs 3
-Capitola Seahorses 1, Aptos FC                                                       0
+Capitola Seahorses 1,Aptos FC                                                       0
                 Santa Cruz Slugs        2,                         Aptos FC     3
     Capitola Seahorses    5,                San Jose Earthquakes 5
 Santa Cruz Slugs         0,    Capitola Seahorses         0
