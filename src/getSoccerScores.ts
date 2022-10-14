@@ -11,18 +11,20 @@ export interface LeagueTracker {
 interface PrintMatchdayResultsProps {
   currentMatchday: number;
   table: LeagueTracker;
+  isFinalMatchday?: boolean;
 }
 
 const printMatchdayResults = ({
   currentMatchday,
   table,
+  isFinalMatchday = false,
 }: PrintMatchdayResultsProps) => {
   console.log(`Matchday ${currentMatchday}`);
   const topTeams = fetchTopTeams(table);
   topTeams.forEach((team) =>
     console.log(team.join(", ") + ` ${team[1] === 1 ? "pt" : "pts"}`)
   );
-  console.log();
+  !isFinalMatchday && console.log();
 };
 
 export const getSoccerScores = ({ input }: GetSoccerScoresProps) => {
@@ -69,6 +71,10 @@ export const getSoccerScores = ({ input }: GetSoccerScoresProps) => {
   });
 
   if (currentMatchDayResults.length !== 0) {
-    printMatchdayResults({ currentMatchday, table: leagueTable });
+    printMatchdayResults({
+      currentMatchday,
+      table: leagueTable,
+      isFinalMatchday: true,
+    });
   }
 };

@@ -7,6 +7,9 @@
   "repository": "https://github.com/ilopezro/jane-soccer-challenge.git",
   "author": "Isai Lopez <ilopezro@ucsc.edu>",
   "license": "MIT",
+  "bin": {
+    "getSoccerResults": "./bin/getSoccerResults"
+  },
   "scripts": {
     "start": "nodemon index.ts fixtures/formatted-input.txt",
     "start:once": "ts-node index.ts",
