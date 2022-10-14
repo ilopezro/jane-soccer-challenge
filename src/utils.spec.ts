@@ -1,4 +1,4 @@
-import { fetchTeamInfo, fetchTopTeams } from "./utils";
+import { fetchTeamInfo, fetchTeamsInfo, fetchTopTeams } from "./utils";
 
 describe("Utils", () => {
   describe("fetchTeamInfo", () => {
@@ -22,7 +22,17 @@ describe("Utils", () => {
       });
     });
   });
-  describe.skip("fetchTeamsInfo", () => {});
+  describe("fetchTeamsInfo", () => {
+    describe("when given two teams", () => {
+      it("returns correct team information", () => {
+        const teamInfoArr = ["Santa Cruz Slugs 4", "Monterrey Cheese 5"];
+        expect(fetchTeamsInfo(teamInfoArr)).toEqual({
+          homeTeam: { name: "Santa Cruz Slugs", score: 4 },
+          awayTeam: { name: "Monterrey Cheese", score: 5 },
+        });
+      });
+    });
+  });
   describe("fetchTopTeams", () => {
     describe("when league has more than 3 teams", () => {
       describe("when top teams have different points", () => {
