@@ -8,6 +8,23 @@ export interface LeagueTracker {
   [index: string]: number;
 }
 
+interface PrintMatchdayResultsProps {
+  currentMatchday: number;
+  table: LeagueTracker;
+}
+
+const printMatchdayResults = ({
+  currentMatchday,
+  table,
+}: PrintMatchdayResultsProps) => {
+  console.log(`Matchday ${currentMatchday}`);
+  const topTeams = fetchTopTeams(table);
+  topTeams.forEach((team) =>
+    console.log(team.join(", ") + ` ${team[1] === 1 ? "pt" : "pts"}`)
+  );
+  console.log();
+};
+
 export const getSoccerScores = ({ input }: GetSoccerScoresProps) => {
   const leagueTable: LeagueTracker = {};
   let currentMatchDayResults: string[] = [];
@@ -26,12 +43,7 @@ export const getSoccerScores = ({ input }: GetSoccerScoresProps) => {
         awayTeam.name
       );
       if (hasHomeTeamPlayedCurrMatchday || hasAwayTeamPlayedCurrMatchday) {
-        console.log(`Matchday ${currentMatchday}`);
-        const topTeams = fetchTopTeams(leagueTable);
-        topTeams.forEach((team) =>
-          console.log(team.join(", ") + ` ${team[1] === 1 ? "pt" : "pts"}`)
-        );
-        console.log();
+        printMatchdayResults({ currentMatchday, table: leagueTable });
         currentMatchDayResults = [];
         currentMatchday++;
       }
@@ -57,10 +69,6 @@ export const getSoccerScores = ({ input }: GetSoccerScoresProps) => {
   });
 
   if (currentMatchDayResults.length !== 0) {
-    console.log(`Matchday ${currentMatchday}`);
-    const topTeams = fetchTopTeams(leagueTable);
-    topTeams.forEach((team) =>
-      console.log(team.join(", ") + ` ${team[1] === 1 ? "pt" : "pts"}`)
-    );
+    printMatchdayResults({ currentMatchday, table: leagueTable });
   }
 };
