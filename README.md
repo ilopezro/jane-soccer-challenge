@@ -25,8 +25,12 @@ There are a couple ways you can use this project
      compiled javascript. We can run our project using `node` and the following command:
      `node dist/index.js inputs/formatted.txt`
 2. Using `ts-node`
+
    - We don't need to create a build for this one. We can simply run:
      `yarn ts-node index.ts inputs/unformatted.txt`
+   - There are [additional scripts](./README.md#additional-scripts) that are
+     included inside `package.json` to faciliate the running of these scripts
+
 3. Using the included binary
    - I have created and added a binary, which we can also use. First, we have to
      make sure that the build is up to date by running `yarn build`. We will then
@@ -61,3 +65,13 @@ following command: `yarn typecheck`
 
 I have included a Design Doc along with its revision inside the `docs` directory
 under [`docs/DesignDoc.md`](./docs/DesignDoc.md)
+
+## Additional Scripts
+
+I also added additional scripts that run the commands on certain types of files
+that I've included inside [`inputs`](./inputs/).
+
+- `start:formatted` runs the formatted text input
+- `start:empty` runs the empty text input
+- `start:smallLeague` runs the small league text input
+- `start:unformatted` runs the unformatted text input
