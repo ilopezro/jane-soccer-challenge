@@ -56,3 +56,8 @@ Markdown files are also linted, but not enforced in CI.
 I have included typescript in this project because I enjoy the type safety net
 it provies. In order to check the typesafety of this project, you can run the
 following command: `yarn typecheck`
+
+## Included Documentation
+
+I have included a Design Doc along with its revision inside the `docs` directory
+under [`docs/DesignDoc.md`](./docs/DesignDoc.md)
