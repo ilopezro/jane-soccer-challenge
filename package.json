@@ -13,8 +13,9 @@
     "build": "tsc",
     "lint:ts": "eslint src",
     "lint:md": "eslint docs README.md",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "jest --coverage src",
+    "test:watch": "jest --coverage --watch",
+    "test:ci": "jest --ci --coverage",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
