@@ -17,11 +17,21 @@ module.exports = {
         "prettier/prettier": ["error", { parser: "markdown" }],
       },
     },
+    {
+      files: ["*.spec.ts"],
+      plugins: ["jest"],
+      extends: ["plugin:jest/recommended"],
+      env: {
+        "jest/globals": true,
+      },
+    },
   ],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
     project: "tsconfig.json",
   },
-  rules: {},
+  rules: {
+    "@typescript-eslint/explicit-function-return-type": "off",
+  },
 };
